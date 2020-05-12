@@ -1,0 +1,44 @@
+<div>
+  <section class="section section-sm section-first bg-default text-left">
+    <div class="container">
+      <div class="row row-60">
+        <div class="col-md-7 col-xl-8">
+          <div *ngIf="item" class="single-service">
+            <h4>{{ item.name }}</h4>
+            <img src="{{ item.image }}" alt="{{ item.name }}" />
+            <h4>{{ item.name }} Service</h4>
+            <br />
+            <div [innerHTML]="item.description"></div>
+          </div>
+        </div>
+        <div class="col-md-5 col-xl-4">
+          <div class="aside aside-services">
+            <div class="row row-60">
+              <div *ngIf="item" class="aside-item col-12">
+                <h5 class="aside-services-title">Services</h5>
+                <ul class="list-category">
+                  <li
+                    *ngFor="let service of services | async"
+                    class="list-category-item"
+                  >
+                    <a
+                      [ngClass]="{
+                        active: item.slug == service.slug
+                      }"
+                      [routerLink]="['/services', service.slug]"
+                      >{{ service.name }}</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="aside-item col-sm-6 col-md-12">
+                <h5 class="aside-services-title">Our contacts</h5>
+                <app-contact></app-contact>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

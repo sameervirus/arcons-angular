@@ -1,0 +1,111 @@
+<footer class="section footer-classic context-dark footer-classic-2">
+  <div class="footer-classic-content">
+    <div class="container">
+      <div class="row row-50 row-lg-0 no-gutters">
+        <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0s">
+          <div class="footer-classic-header">
+            <h6 class="footer-classic-title">Quick links</h6>
+          </div>
+          <div class="footer-classic-body">
+            <ul class="footer-classic-list d-inline-block d-sm-block">
+              <li><a [routerLink]="['/about-us']">Our History</a></li>
+              <li><a href="javascript: void(0)">FAQ</a></li>
+              <li><a [routerLink]="['/news']">Latest News</a></li>
+              <li><a [routerLink]="['/services']">Services</a></li>
+              <li><a [routerLink]="['/contact-us']">Contact Us</a></li>
+            </ul>
+            <ul class="list-inline footer-social-list">
+              <li>
+                <a
+                  class="icon"
+                  href="https://www.facebook.com/pages/ARCONS/319231026934"
+                  ><fa-icon [icon]="faFacebook"></fa-icon
+                ></a>
+              </li>
+              <li>
+                <a class="icon" href="https://www.linkedin.com/company/arcons"
+                  ><fa-icon [icon]="faLinkedinIn"></fa-icon
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay=".1s">
+          <div class="footer-classic-header">
+            <div class="box-width-230">
+              <h6 class="footer-classic-title">Get in touch</h6>
+            </div>
+          </div>
+          <div class="footer-classic-body">
+            <div class="box-width-230">
+              <div class="footer-classic-contacts">
+                <div class="footer-classic-contacts-item">
+                  <div class="unit unit-spacing-sm align-items-center">
+                    <div class="unit-left">
+                      <span class="icon icon-24"
+                        ><fa-icon [icon]="faPhone"></fa-icon
+                      ></span>
+                    </div>
+                    <div class="unit-body">
+                      <a *ngIf="data" class="phone" href="tel:{{ data.tel }}">{{
+                        data.tel
+                      }}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-classic-contacts-item">
+                  <div class="unit unit-spacing-sm align-items-center">
+                    <div class="unit-left">
+                      <span class="icon"
+                        ><fa-icon [icon]="faEnvelope"></fa-icon
+                      ></span>
+                    </div>
+                    <div class="unit-body">
+                      <a
+                        *ngIf="data"
+                        class="mail"
+                        href="mailto:{{ data.email }}"
+                        >{{ data.email }}</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                class="button button-sm button-primary button-winona"
+                [routerLink]="['/contact-us']"
+              >
+                <div class="content-original">Request a quote</div>
+                <div class="content-dubbed">Request a quote</div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 position-static">
+          <div class="footer-classic-gmap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13804.849381128166!2d31.353521253211063!3d30.116736712825027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458187c15c5567d%3A0xcf7514ab8feb25fb!2sARCONS!5e0!3m2!1sen!2seg!4v1586695448595!5m2!1sen!2seg"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              style="border: 0;"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-classic-panel">
+    <div class="container">
+      <!-- Rights-->
+      <p class="rights">
+        <span>©&nbsp;</span><span class="copyright-year">2020</span
+        ><span>&nbsp;</span><span *ngIf="data">{{ data.title }}</span
+        ><span>.&nbsp;</span><a href="javascript: void(0)">Privacy policy</a>
+      </p>
+    </div>
+  </div>
+</footer>

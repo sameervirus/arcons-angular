@@ -1,0 +1,43 @@
+<!-- Box contacts-->
+<div *ngIf="data" class="box-contacts">
+  <div class="box-contacts-item">
+    <div class="box-contacts-title">Call us</div>
+    <div class="unit unit-spacing-xs flex-column flex-md-row">
+      <div class="unit-left">
+        <span class="icon icon-24"><fa-icon [icon]="faPhone"></fa-icon></span>
+      </div>
+      <div class="unit-body">
+        <a class="phone" href="tel:{{ data.tel }}">{{ data.tel }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="box-contacts-item">
+    <div class="box-contacts-title">Office</div>
+    <div class="unit unit-spacing-xs flex-column flex-md-row">
+      <div class="unit-left">
+        <span class="icon icon-28"
+          ><fa-icon [icon]="faMapMarked"></fa-icon
+        ></span>
+      </div>
+      <div class="unit-body">
+        <a
+          class="address"
+          href="https://goo.gl/maps/nD6xx2dS4bvjUpvt5"
+          target="_blank"
+          >{{ data.address }}</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="box-contacts-item">
+    <div class="box-contacts-title">E-mail</div>
+    <div class="unit unit-spacing-xs flex-column flex-md-row">
+      <div class="unit-left">
+        <span class="icon"><fa-icon [icon]="faEnvelope"></fa-icon></span>
+      </div>
+      <div class="unit-body">
+        <a class="mail" href="mailto:{{ data.email }}">{{ data.email }}</a>
+      </div>
+    </div>
+  </div>
+</div>

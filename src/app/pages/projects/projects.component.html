@@ -1,0 +1,54 @@
+<div>
+  <app-head title="{{ category$ | async }}"></app-head>
+  <section class="section section-lg bg-default">
+    <div class="container">
+      <div class="isotope-wrap">
+        <div class="row">
+          <div
+            *ngFor="
+              let project of projects
+                | async
+                | paginate: { itemsPerPage: 10, currentPage: p }
+            "
+            class="col-md-6"
+          >
+            <!-- Thumbnail Classic-->
+            <article class="thumbnail thumbnail-classic thumbnail-lg">
+              <a
+                class="thumbnail-classic-figure"
+                [routerLink]="[
+                  '/projects',
+                  project.category_slug,
+                  project.slug
+                ]"
+                ><img src="{{ project.img }}" alt="" width="570" height="299"
+              /></a>
+              <div class="thumbnail-classic-caption">
+                <h6 class="thumbnail-classic-title">
+                  <a
+                    [routerLink]="[
+                      '/projects',
+                      project.category_slug,
+                      project.slug
+                    ]"
+                    >{{ project.name }}</a
+                  >
+                </h6>
+                <div class="thumbnail-classic-time">
+                  <time datetime="2019-04-05">{{ project.created_at }}</time>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <pagination-controls
+              (pageChange)="onPageChange($event)"
+            ></pagination-controls>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

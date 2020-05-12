@@ -1,0 +1,49 @@
+<div>
+  <app-head title="Services"></app-head>
+  <section class="section section-lg bg-default">
+    <div class="container">
+      <div class="row row-60">
+        <div class="col-md-12 col-xl-12">
+          <div class="row row-40">
+            <div
+              *ngFor="let service of services | async"
+              class="col-lg-12 col-xl-4"
+            >
+              <!-- Services Classic-->
+              <article class="services-classic">
+                <a
+                  class="services-classic-figure"
+                  [routerLink]="['/services', service.slug]"
+                  ><img
+                    src="{{ service.thumb }}"
+                    alt=""
+                    width="370"
+                    height="274"
+                /></a>
+                <div class="services-classic-caption">
+                  <div class="unit align-items-lg-center">
+                    <div class="unit-left">
+                      <span
+                        class="services-classic-icon mdi mdi-road-variant"
+                      ></span>
+                    </div>
+                    <div class="unit-body">
+                      <h5 class="services-classic-title">
+                        <a [routerLink]="['/services', service.slug]">{{
+                          service.name
+                        }}</a>
+                      </h5>
+                      <p class="services-classic-text">
+                        {{ service.short_desc }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
