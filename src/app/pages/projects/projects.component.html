@@ -1,6 +1,9 @@
 <div>
   <app-head title="{{ category$ | async }}"></app-head>
-  <section class="section section-lg bg-default">
+  <div *ngIf="loading">
+    loading ...
+</div>
+  <section class="section section-lg bg-default" *ngIf="!loading">
     <div class="container">
       <div class="isotope-wrap">
         <div class="row">

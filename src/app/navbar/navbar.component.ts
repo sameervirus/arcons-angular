@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { faFacebookF, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faLinkedinIn, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 import { ServiceService } from "../services/service.service";
 
@@ -11,11 +11,14 @@ import { ServiceService } from "../services/service.service";
 export class NavbarComponent implements OnInit {
   faFacebook = faFacebookF;
   faLinkedinIn = faLinkedinIn;
+  faWhatsapp = faWhatsapp;
   categories;
+  data;
   constructor(private serviceService: ServiceService) {}
 
   ngOnInit(): void {
     this.categories = this.serviceService.getProjectsCategories();
+    this.serviceService.getData().subscribe((res) => (this.data = res));
   }
 
   closeMenu() {

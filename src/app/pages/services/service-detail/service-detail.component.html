@@ -1,5 +1,8 @@
 <div>
-  <section class="section section-sm section-first bg-default text-left">
+  <div *ngIf="loading">
+    loading ...
+</div>
+  <section class="section section-sm section-first bg-default text-left" *ngIf="!loading">
     <div class="container">
       <div class="row row-60">
         <div class="col-md-7 col-xl-8">

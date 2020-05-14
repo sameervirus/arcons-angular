@@ -6,12 +6,17 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class ServiceService {
-  url = "http://localhost/arcons/public/api/";
+  
+  url = "http://arconsegypt.com/api/api/";
 
   constructor(private http: HttpClient) {}
 
   getData() {
     return this.http.get(this.url + "data");
+  }
+
+  getClients(): any {
+    return this.http.get(this.url + "clients");
   }
 
   getServices() {
@@ -36,6 +41,10 @@ export class ServiceService {
 
   getProject(category: string, slug: string): any {
     return this.http.get(this.url + "projects/" + category + "/" + slug);
+  }
+
+  getFeatured() {
+    return this.http.get(this.url + "featured");
   }
 
   submitFeedback(feeds) {

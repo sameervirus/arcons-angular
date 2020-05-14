@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { faFacebookF, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faLinkedinIn, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 import { HelperService } from "../../services/helper.service";
 import { ServiceService } from "../../services/service.service";
@@ -13,6 +13,7 @@ import { ServiceService } from "../../services/service.service";
 export class ContactsComponent implements OnInit {
   faFacebook = faFacebookF;
   faLinkedinIn = faLinkedinIn;
+  faWhatsapp = faWhatsapp;
   data;
   submitted = false;
   feeds = {

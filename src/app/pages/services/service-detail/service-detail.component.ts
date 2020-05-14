@@ -13,6 +13,7 @@ export class ServiceDetailComponent implements OnInit {
   services: any;
   item: any;
   serviceItem;
+  loading = true;
   constructor(
     private serviceService: ServiceService,
     private route: ActivatedRoute
@@ -23,7 +24,7 @@ export class ServiceDetailComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       this.serviceService
         .getService(params.get("service"))
-        .subscribe((res) => (this.item = res));
+        .subscribe((res) => {this.item = res; this.loading = false;});
     });
 
     window.scrollTo(0, 0);

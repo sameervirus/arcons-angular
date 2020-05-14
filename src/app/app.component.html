@@ -1,7 +1,7 @@
 <div id="app">
   <ngx-loading-bar [includeSpinner]="false"></ngx-loading-bar>
   <app-loader></app-loader>
-  <div class="page">
+  <div class="page" [class.animated]="loadDone">
     <header class="section page-header">
       <!-- RD Navbar -->
       <app-navbar></app-navbar>

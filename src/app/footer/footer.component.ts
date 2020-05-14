@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { faFacebookF, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faLinkedinIn, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import { ServiceService } from "../services/service.service";
@@ -14,6 +14,7 @@ export class FooterComponent implements OnInit {
   faLinkedinIn = faLinkedinIn;
   faPhone = faPhone;
   faEnvelope = faEnvelope;
+  faWhatsapp = faWhatsapp;
   data;
   constructor(private serviceService: ServiceService) {}
 

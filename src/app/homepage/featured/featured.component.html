@@ -3,7 +3,7 @@
     <h3 class="oh-desktop">
       <span class="d-inline-block wow slideInDown">Featured projects</span>
     </h3>
-    <div class="owl-style-4">
+    <div class="owl-style-4" *ngIf="features">
       <div
         class="owl-carousel dots-style-2 owl-loaded owl-drag"
         data-items="1"
@@ -14,197 +14,34 @@
         data-dots="true"
         data-smart-speed="400"
         data-autoplay="true"
-        style=""
       >
-        <article class="project-classic">
-          <a class="project-classic-figure" href="#"
+        <article *ngFor="let featured of features" class="project-classic">
+          <a class="project-classic-figure" [routerLink]="[
+          '/projects',
+          featured.category_slug,
+          featured.slug
+        ]"
             ><img
-              src="assets/images/project-7-570x370.jpg"
+              src="{{featured.thumb}}"
               alt=""
               width="570"
               height="370"
           /></a>
           <div class="project-classic-caption">
             <h5 class="project-classic-title">
-              <a href="#"
-                >Wilson &amp; Taylor Concert Hall and Entertainment Center
-                (2017)</a
+              <a [routerLink]="[
+              '/projects',
+              featured.category_slug,
+              featured.slug
+            ]"
+                >{{ featured.name }}</a
               >
             </h5>
             <div class="project-classic-location">
-              <span class="icon mdi mdi-map-marker"></span><span>florida</span>
+              <span class="icon mdi mdi-map-marker"></span><span>{{featured.location}}</span>
             </div>
             <p class="project-classic-text">
-              Civil Group provided engineering design and planning for this
-              project completed in early 2017.
-            </p>
-          </div>
-        </article>
-        <article class="project-classic">
-          <a class="project-classic-figure" href="#"
-            ><img
-              src="assets/images/project-7-570x370.jpg"
-              alt=""
-              width="570"
-              height="370"
-          /></a>
-          <div class="project-classic-caption">
-            <h5 class="project-classic-title">
-              <a href="#"
-                >Wilson &amp; Taylor Concert Hall and Entertainment Center
-                (2017)</a
-              >
-            </h5>
-            <div class="project-classic-location">
-              <span class="icon mdi mdi-map-marker"></span><span>florida</span>
-            </div>
-            <p class="project-classic-text">
-              Civil Group provided engineering design and planning for this
-              project completed in early 2017.
-            </p>
-          </div>
-        </article>
-        <article class="project-classic">
-          <a class="project-classic-figure" href="#"
-            ><img
-              src="assets/images/project-7-570x370.jpg"
-              alt=""
-              width="570"
-              height="370"
-          /></a>
-          <div class="project-classic-caption">
-            <h5 class="project-classic-title">
-              <a href="#"
-                >Wilson &amp; Taylor Concert Hall and Entertainment Center
-                (2017)</a
-              >
-            </h5>
-            <div class="project-classic-location">
-              <span class="icon mdi mdi-map-marker"></span><span>florida</span>
-            </div>
-            <p class="project-classic-text">
-              Civil Group provided engineering design and planning for this
-              project completed in early 2017.
-            </p>
-          </div>
-        </article>
-        <article class="project-classic">
-          <a class="project-classic-figure" href="#"
-            ><img
-              src="assets/images/project-7-570x370.jpg"
-              alt=""
-              width="570"
-              height="370"
-          /></a>
-          <div class="project-classic-caption">
-            <h5 class="project-classic-title">
-              <a href="#"
-                >Wilson &amp; Taylor Concert Hall and Entertainment Center
-                (2017)</a
-              >
-            </h5>
-            <div class="project-classic-location">
-              <span class="icon mdi mdi-map-marker"></span><span>florida</span>
-            </div>
-            <p class="project-classic-text">
-              Civil Group provided engineering design and planning for this
-              project completed in early 2017.
-            </p>
-          </div>
-        </article>
-        <article class="project-classic">
-          <a class="project-classic-figure" href="#"
-            ><img
-              src="assets/images/project-7-570x370.jpg"
-              alt=""
-              width="570"
-              height="370"
-          /></a>
-          <div class="project-classic-caption">
-            <h5 class="project-classic-title">
-              <a href="#"
-                >Wilson &amp; Taylor Concert Hall and Entertainment Center
-                (2017)</a
-              >
-            </h5>
-            <div class="project-classic-location">
-              <span class="icon mdi mdi-map-marker"></span><span>florida</span>
-            </div>
-            <p class="project-classic-text">
-              Civil Group provided engineering design and planning for this
-              project completed in early 2017.
-            </p>
-          </div>
-        </article>
-        <article class="project-classic">
-          <a class="project-classic-figure" href="#"
-            ><img
-              src="assets/images/project-7-570x370.jpg"
-              alt=""
-              width="570"
-              height="370"
-          /></a>
-          <div class="project-classic-caption">
-            <h5 class="project-classic-title">
-              <a href="#"
-                >Wilson &amp; Taylor Concert Hall and Entertainment Center
-                (2017)</a
-              >
-            </h5>
-            <div class="project-classic-location">
-              <span class="icon mdi mdi-map-marker"></span><span>florida</span>
-            </div>
-            <p class="project-classic-text">
-              Civil Group provided engineering design and planning for this
-              project completed in early 2017.
-            </p>
-          </div>
-        </article>
-        <article class="project-classic">
-          <a class="project-classic-figure" href="#"
-            ><img
-              src="assets/images/project-7-570x370.jpg"
-              alt=""
-              width="570"
-              height="370"
-          /></a>
-          <div class="project-classic-caption">
-            <h5 class="project-classic-title">
-              <a href="#"
-                >Wilson &amp; Taylor Concert Hall and Entertainment Center
-                (2017)</a
-              >
-            </h5>
-            <div class="project-classic-location">
-              <span class="icon mdi mdi-map-marker"></span><span>florida</span>
-            </div>
-            <p class="project-classic-text">
-              Civil Group provided engineering design and planning for this
-              project completed in early 2017.
-            </p>
-          </div>
-        </article>
-        <article class="project-classic">
-          <a class="project-classic-figure" href="#"
-            ><img
-              src="assets/images/project-7-570x370.jpg"
-              alt=""
-              width="570"
-              height="370"
-          /></a>
-          <div class="project-classic-caption">
-            <h5 class="project-classic-title">
-              <a href="#"
-                >Wilson &amp; Taylor Concert Hall and Entertainment Center
-                (2017)</a
-              >
-            </h5>
-            <div class="project-classic-location">
-              <span class="icon mdi mdi-map-marker"></span><span>florida</span>
-            </div>
-            <p class="project-classic-text">
-              Civil Group provided engineering design and planning for this
-              project completed in early 2017.
+              {{featured.description}}
             </p>
           </div>
         </article>

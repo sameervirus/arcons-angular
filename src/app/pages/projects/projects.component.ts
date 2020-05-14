@@ -12,6 +12,7 @@ export class ProjectsComponent implements OnInit {
   projects: any;
   category$: any;
   p: number = 1;
+  loading = true;
   constructor(
     private serviceService: ServiceService,
     private route: ActivatedRoute
@@ -22,6 +23,7 @@ export class ProjectsComponent implements OnInit {
       this.projects = this.serviceService.getProjects(params.get("category"));
       this.category$ = this.projects.pipe(map((x) => x[0].category));
       window.scrollTo(0, 0);
+      this.loading = false;
     });
   }
 

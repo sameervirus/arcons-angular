@@ -19,7 +19,7 @@
     data-xxl-stick-up="true"
   >
     <div class="rd-navbar-inner-outer">
-      <div class="rd-navbar-aside">
+      <div class="rd-navbar-aside" *ngIf="data">
         <div class="rd-navbar-aside-inner">
           <ul class="rd-navbar-contacts-2">
             <li>
@@ -28,7 +28,7 @@
                   <span class="icon mdi mdi-phone"></span>
                 </div>
                 <div class="unit-body">
-                  <a class="phone" href="tel:+20226209505">+20 2-2620-9505</a>
+                  <a class="phone" href="tel:{{data.tel}}">{{data.tel}}</a>
                 </div>
               </div>
             </li>
@@ -42,7 +42,7 @@
                     class="address"
                     target="_blank"
                     href="https://goo.gl/maps/gzFReLQQbrAF3ezW8"
-                    >144 Amar Ben Yasser, Heliopolis, Cairo, Egypt.</a
+                    >{{data.address}}</a
                   >
                 </div>
               </div>
@@ -52,13 +52,18 @@
             <li>
               <a
                 class="icon"
-                href="https://www.facebook.com/pages/ARCONS/319231026934"
+                href="{{data.social_facebook}}"
                 ><fa-icon [icon]="faFacebook"></fa-icon
               ></a>
             </li>
             <li>
-              <a class="icon" href="https://www.linkedin.com/company/arcons"
+              <a class="icon" href="{{data.social_linkedin}}"
                 ><fa-icon [icon]="faLinkedinIn"></fa-icon
+              ></a>
+            </li>
+            <li>
+              <a class="icon" href="{{data.social_whatsapp}}"
+                ><fa-icon [icon]="faWhatsapp"></fa-icon
               ></a>
             </li>
           </ul>

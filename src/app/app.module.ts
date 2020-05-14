@@ -23,7 +23,6 @@ import { FeaturedComponent } from "./homepage/featured/featured.component";
 import { ClientsComponent } from "./homepage/clients/clients.component";
 import { TeamComponent } from "./homepage/team/team.component";
 import { NewsletterComponent } from "./homepage/newsletter/newsletter.component";
-import { LastnewsComponent } from "./homepage/lastnews/lastnews.component";
 import { FooterComponent } from "./footer/footer.component";
 import { AboutsComponent } from "./pages/abouts/abouts.component";
 import { HomeComponent } from "./homepage/home/home.component";
@@ -48,7 +47,6 @@ import { ContactsComponent } from "./pages/contacts/contacts.component";
     ClientsComponent,
     TeamComponent,
     NewsletterComponent,
-    LastnewsComponent,
     FooterComponent,
     AboutsComponent,
     HomeComponent,
@@ -61,7 +59,7 @@ import { ContactsComponent } from "./pages/contacts/contacts.component";
     ContactsComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FontAwesomeModule,
     LoadingBarRouterModule,

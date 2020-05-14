@@ -46,6 +46,7 @@ export class ProjectComponent implements OnInit {
     faArrowLeft: faArrowLeft,
     faArrowRight: faArrowRight,
   };
+  loading = true;
   constructor(
     private serviceService: ServiceService,
     private helper: HelperService,
@@ -77,6 +78,7 @@ export class ProjectComponent implements OnInit {
             content: res.description,
           });
           this.meta.addTag({ property: "og:image", content: res.img[0] });
+          this.loading = false;
         });
       window.scrollTo(0, 0);
     });
