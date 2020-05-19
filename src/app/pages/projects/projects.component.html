@@ -2,7 +2,7 @@
   <app-head title="{{ category$ | async }}"></app-head>
   <div *ngIf="loading">
     loading ...
-</div>
+  </div>
   <section class="section section-lg bg-default" *ngIf="!loading">
     <div class="container">
       <div class="isotope-wrap">
@@ -24,7 +24,7 @@
                   project.category_slug,
                   project.slug
                 ]"
-                ><img src="{{ project.img }}" alt="" width="570" height="299"
+                ><img src="{{ project.thumb }}" alt="" width="570" height="299"
               /></a>
               <div class="thumbnail-classic-caption">
                 <h6 class="thumbnail-classic-title">
@@ -38,7 +38,9 @@
                   >
                 </h6>
                 <div class="thumbnail-classic-time">
-                  <time datetime="2019-04-05">{{ project.created_at }}</time>
+                  <time datetime="2019-04-05">{{
+                    project.created_at | date: "yyyy"
+                  }}</time>
                 </div>
               </div>
             </article>

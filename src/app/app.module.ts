@@ -33,6 +33,7 @@ import { ProjectComponent } from "./pages/project/project.component";
 import { ServiceDetailComponent } from "./pages/services/service-detail/service-detail.component";
 import { ContactComponent } from "./blocks/contact/contact.component";
 import { ContactsComponent } from "./pages/contacts/contacts.component";
+import { DownloadsComponent } from './blocks/downloads/downloads.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { ContactsComponent } from "./pages/contacts/contacts.component";
     ProjectComponent,
     ContactComponent,
     ContactsComponent,
+    DownloadsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

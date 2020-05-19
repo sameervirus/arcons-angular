@@ -148,11 +148,14 @@
                       ><fa-icon [icon]="faLinkedinIn"></fa-icon
                     ></a>
                   </li>
-            <li>
-              <a class="icon" target="_blank" href="{{data.social_whatsapp}}"
-                ><fa-icon [icon]="faWhatsapp"></fa-icon
-              ></a>
-            </li>
+                  <li>
+                    <a
+                      class="icon"
+                      target="_blank"
+                      href="{{ data.social_whatsapp }}"
+                      ><fa-icon [icon]="faWhatsapp"></fa-icon
+                    ></a>
+                  </li>
                 </ul>
               </div>
               <div class="col-sm-6 col-lg-12 aside-contacts-item">
@@ -161,7 +164,9 @@
                   class="unit unit-spacing-xs justify-content-center justify-content-md-start"
                 >
                   <div class="unit-left">
-                    <span class="icon mdi mdi-phone"></span>
+                    <span class="icon"
+                      ><fa-icon [icon]="faPhone"></fa-icon
+                    ></span>
                   </div>
                   <div class="unit-body">
                     <a class="phone" href="tel:{{ data.tel }}">{{
@@ -176,7 +181,9 @@
                   class="unit unit-spacing-xs justify-content-center justify-content-md-start"
                 >
                   <div class="unit-left">
-                    <span class="icon mdi mdi-email-outline"></span>
+                    <span class="icon"
+                      ><fa-icon [icon]="faEnvelope"></fa-icon
+                    ></span>
                   </div>
                   <div class="unit-body">
                     <a class="mail" href="mailto:{{ data.email }}">{{
@@ -191,10 +198,17 @@
                   class="unit unit-spacing-xs justify-content-center justify-content-md-start"
                 >
                   <div class="unit-left">
-                    <span class="icon mdi mdi-map-marker"></span>
+                    <span class="icon"
+                      ><fa-icon [icon]="faMapMarked"></fa-icon
+                    ></span>
                   </div>
                   <div class="unit-body">
-                    <a class="address" href="#">{{ data.address }}</a>
+                    <a
+                      class="address"
+                      href="https://goo.gl/maps/jsQfb7GoopGfAVXp7"
+                      target="_blank"
+                      >{{ data.address }}</a
+                    >
                   </div>
                 </div>
               </div>
