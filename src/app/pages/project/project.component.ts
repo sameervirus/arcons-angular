@@ -23,11 +23,12 @@ import {
   faPinterestP,
   faFacebookMessenger,
 } from "@fortawesome/free-brands-svg-icons";
+import { ViewEncapsulation } from "@angular/core";
 
 @Component({
   selector: "app-project",
   templateUrl: "./project.component.html",
-  styleUrls: ["./project.component.css"],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProjectComponent implements OnInit {
   project;
@@ -69,8 +70,8 @@ export class ProjectComponent implements OnInit {
       this.serviceService
         .getProject(params.get("category"), params.get("project"))
         .subscribe((res) => {
-          (this.project = res), this.helper.loadJs();
-          this.meta.addTag({ property: "og:url", content: this.url });
+          (this.project = res),
+            this.meta.addTag({ property: "og:url", content: this.url });
           this.meta.addTag({ property: "og:title", content: res.name });
           this.meta.addTag({ property: "og:type", content: "project" });
           this.meta.addTag({
@@ -79,8 +80,26 @@ export class ProjectComponent implements OnInit {
           });
           this.meta.addTag({ property: "og:image", content: res.img[0] });
           this.loading = false;
+          this.loadscript();
         });
       window.scrollTo(0, 0);
     });
+  }
+
+  loadscript() {
+    if (document.getElementById("slick_js") != null) {
+      document.getElementById("slick_js").remove();
+    }
+    const node = document.createElement("script");
+    node.src = "assets/js/slick.js";
+    node.type = "text/javascript";
+    node.async = false;
+    node.id = "slick_js";
+    node.charset = "utf-8";
+    document.getElementsByTagName("body")[0].appendChild(node);
+
+    if (document.getElementById("slick_js") != null) {
+      document.getElementById("slick_js").remove();
+    }
   }
 }

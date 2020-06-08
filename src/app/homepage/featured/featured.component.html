@@ -5,7 +5,7 @@
     </h3>
     <div class="owl-style-4" *ngIf="features">
       <div
-        class="owl-carousel dots-style-2 owl-loaded owl-drag"
+        class="owl-carousel dots-style-2"
         data-items="1"
         data-md-items="2"
         data-margin="30"
@@ -16,32 +16,28 @@
         data-autoplay="true"
       >
         <article *ngFor="let featured of features" class="project-classic">
-          <a class="project-classic-figure" [routerLink]="[
-          '/projects',
-          featured.category_slug,
-          featured.slug
-        ]"
-            ><img
-              src="{{featured.thumb}}"
-              alt=""
-              width="570"
-              height="370"
+          <a
+            class="project-classic-figure"
+            [routerLink]="['/projects', featured.category_slug, featured.slug]"
+            ><img src="{{ featured.thumb }}" alt="" width="570" height="370"
           /></a>
           <div class="project-classic-caption">
             <h5 class="project-classic-title">
-              <a [routerLink]="[
-              '/projects',
-              featured.category_slug,
-              featured.slug
-            ]"
+              <a
+                [routerLink]="[
+                  '/projects',
+                  featured.category_slug,
+                  featured.slug
+                ]"
                 >{{ featured.name }}</a
               >
             </h5>
             <div class="project-classic-location">
-              <span class="icon mdi mdi-map-marker"></span><span>{{featured.location}}</span>
+              <span class="icon mdi mdi-map-marker"></span
+              ><span>{{ featured.location }}</span>
             </div>
             <p class="project-classic-text">
-              {{featured.description}}
+              {{ featured.description }}
             </p>
           </div>
         </article>

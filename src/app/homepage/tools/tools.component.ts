@@ -5,12 +5,11 @@ import {
   faDollarSign,
   faThumbsUp,
   faUserFriends,
-  faHeadset
+  faHeadset,
 } from "@fortawesome/free-solid-svg-icons";
 @Component({
   selector: "app-tools",
   templateUrl: "./tools.component.html",
-  styleUrls: ["./tools.component.css"]
 })
 export class ToolsComponent implements OnInit {
   faTools = faTools;

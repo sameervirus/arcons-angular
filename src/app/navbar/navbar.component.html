@@ -28,7 +28,7 @@
                   <span class="icon mdi mdi-phone"></span>
                 </div>
                 <div class="unit-body">
-                  <a class="phone" href="tel:{{data.tel}}">{{data.tel}}</a>
+                  <a class="phone" href="tel:{{ data.tel }}">{{ data.tel }}</a>
                 </div>
               </div>
             </li>
@@ -42,7 +42,7 @@
                     class="address"
                     target="_blank"
                     href="https://goo.gl/maps/gzFReLQQbrAF3ezW8"
-                    >{{data.address}}</a
+                    >{{ data.address }}</a
                   >
                 </div>
               </div>
@@ -50,19 +50,17 @@
           </ul>
           <ul class="list-share-2">
             <li>
-              <a
-                class="icon"
-                href="{{data.social_facebook}}"
+              <a class="icon" target="_blank" href="{{ data.social_facebook }}"
                 ><fa-icon [icon]="faFacebook"></fa-icon
               ></a>
             </li>
             <li>
-              <a class="icon" href="{{data.social_linkedin}}"
+              <a class="icon" target="_blank" href="{{ data.social_linkedin }}"
                 ><fa-icon [icon]="faLinkedinIn"></fa-icon
               ></a>
             </li>
             <li>
-              <a class="icon" href="{{data.social_whatsapp}}"
+              <a class="icon" target="_blank" href="{{ data.social_whatsapp }}"
                 ><fa-icon [icon]="faWhatsapp"></fa-icon
               ></a>
             </li>
@@ -129,12 +127,16 @@
                 <li>
                   <a
                     class="icon"
+                    target="_blank"
                     href="https://www.facebook.com/pages/ARCONS/319231026934"
                     ><fa-icon [icon]="faFacebook"></fa-icon
                   ></a>
                 </li>
                 <li>
-                  <a class="icon" href="https://www.linkedin.com/company/arcons"
+                  <a
+                    class="icon"
+                    target="_blank"
+                    href="https://www.linkedin.com/company/arcons"
                     ><fa-icon [icon]="faLinkedinIn"></fa-icon
                   ></a>
                 </li>
@@ -207,18 +209,22 @@
             </div>
           </div>
           <div class="rd-navbar-project-content rd-navbar-content">
-            <div>
+            <div *ngIf="features">
               <div class="row gutters-20" data-lightgallery="group">
-                <div class="col-6">
+                <div class="col-6" *ngFor="let feature of features">
                   <!-- Thumbnail Creative-->
                   <article class="thumbnail thumbnail-creative">
                     <a
-                      href="images/project-1-1200x800-original.jpg"
+                      [routerLink]="[
+                        '/projects',
+                        feature.category_slug,
+                        feature.slug
+                      ]"
                       data-lightgallery="item"
                     >
                       <div class="thumbnail-creative-figure">
                         <img
-                          src="assets/images/project-1-195x164.jpg"
+                          src="{{ feature.thumb }}"
                           alt=""
                           width="195"
                           height="164"
@@ -227,124 +233,8 @@
                       <div class="thumbnail-creative-caption">
                         <span
                           class="icon thumbnail-creative-icon linearicons-magnifier"
-                        ></span>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-                <div class="col-6">
-                  <!-- Thumbnail Creative-->
-                  <article class="thumbnail thumbnail-creative">
-                    <a
-                      href="images/project-2-1200x800-original.jpg"
-                      data-lightgallery="item"
-                    >
-                      <div class="thumbnail-creative-figure">
-                        <img
-                          src="assets/images/project-1-195x164.jpg"
-                          alt=""
-                          width="195"
-                          height="164"
-                        />
-                      </div>
-                      <div class="thumbnail-creative-caption">
-                        <span
-                          class="icon thumbnail-creative-icon linearicons-magnifier"
-                        ></span>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-                <div class="col-6">
-                  <!-- Thumbnail Creative-->
-                  <article class="thumbnail thumbnail-creative">
-                    <a
-                      href="images/project-3-1200x800-original.jpg"
-                      data-lightgallery="item"
-                    >
-                      <div class="thumbnail-creative-figure">
-                        <img
-                          src="assets/images/project-1-195x164.jpg"
-                          alt=""
-                          width="195"
-                          height="164"
-                        />
-                      </div>
-                      <div class="thumbnail-creative-caption">
-                        <span
-                          class="icon thumbnail-creative-icon linearicons-magnifier"
-                        ></span>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-                <div class="col-6">
-                  <!-- Thumbnail Creative-->
-                  <article class="thumbnail thumbnail-creative">
-                    <a
-                      href="images/project-4-1200x800-original.jpg"
-                      data-lightgallery="item"
-                    >
-                      <div class="thumbnail-creative-figure">
-                        <img
-                          src="assets/images/project-1-195x164.jpg"
-                          alt=""
-                          width="195"
-                          height="164"
-                        />
-                      </div>
-                      <div class="thumbnail-creative-caption">
-                        <span
-                          class="icon thumbnail-creative-icon linearicons-magnifier"
-                        ></span>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-                <div class="col-6">
-                  <!-- Thumbnail Creative-->
-                  <article class="thumbnail thumbnail-creative">
-                    <a
-                      href="images/project-5-1200x800-original.jpg"
-                      data-lightgallery="item"
-                    >
-                      <div class="thumbnail-creative-figure">
-                        <img
-                          src="assets/images/project-1-195x164.jpg"
-                          alt=""
-                          width="195"
-                          height="164"
-                        />
-                      </div>
-                      <div class="thumbnail-creative-caption">
-                        <span
-                          class="icon thumbnail-creative-icon linearicons-magnifier"
-                        ></span>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-                <div class="col-6">
-                  <!-- Thumbnail Creative-->
-                  <article class="thumbnail thumbnail-creative">
-                    <a
-                      href="images/project-6-1200x800-original.jpg"
-                      data-lightgallery="item"
-                    >
-                      <div class="thumbnail-creative-figure">
-                        <img
-                          src="assets/images/project-1-195x164.jpg"
-                          alt=""
-                          width="195"
-                          height="164"
-                        />
-                      </div>
-                      <div class="thumbnail-creative-caption">
-                        <span
-                          class="icon thumbnail-creative-icon linearicons-magnifier"
-                        ></span>
-                      </div>
-                    </a>
+                        ></span></div
+                    ></a>
                   </article>
                 </div>
               </div>

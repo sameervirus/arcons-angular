@@ -6,7 +6,6 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class ServiceService {
-  
   url = "http://arconsegypt.com/api/api/";
 
   constructor(private http: HttpClient) {}
@@ -49,5 +48,9 @@ export class ServiceService {
 
   submitFeedback(feeds) {
     return this.http.post(this.url + "feedback/", { data: feeds });
+  }
+
+  getSlides() {
+    return this.http.get(this.url + "slider");
   }
 }

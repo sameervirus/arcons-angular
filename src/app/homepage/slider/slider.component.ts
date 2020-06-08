@@ -1,15 +1,26 @@
 import { Component, OnInit } from "@angular/core";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
+import { ServiceService } from "../../services/service.service";
+import { HelperService } from "../../services/helper.service";
+
 @Component({
   selector: "app-slider",
   templateUrl: "./slider.component.html",
-  styleUrls: ["./slider.component.css"]
 })
 export class SliderComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
-  constructor() {}
+  slides;
+  constructor(
+    private serviceService: ServiceService,
+    private helper: HelperService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.serviceService.getSlides().subscribe((res) => {
+      this.slides = res;
+      this.helper.loadJs();
+    });
+  }
 }

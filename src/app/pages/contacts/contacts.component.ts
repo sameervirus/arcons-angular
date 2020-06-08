@@ -17,7 +17,6 @@ import { ServiceService } from "../../services/service.service";
 @Component({
   selector: "app-contacts",
   templateUrl: "./contacts.component.html",
-  styleUrls: ["./contacts.component.css"],
 })
 export class ContactsComponent implements OnInit {
   faFacebook = faFacebookF;
@@ -40,8 +39,8 @@ export class ContactsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.helper.loadJs();
     this.serviceService.getData().subscribe((res) => (this.data = res));
+    this.helper.loadJs();
   }
 
   resolved(captchaResponse: string) {

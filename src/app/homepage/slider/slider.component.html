@@ -1,19 +1,20 @@
 <!-- Slider main container -->
 <section
-  class="section swiper-container swiper-slider swiper-slider-2 swiper-container-horizontal swiper-container-fade"
+  class="section swiper-container swiper-slider swiper-slider-2"
   data-loop="true"
-  data-autoplay="false"
+  data-autoplay="5000"
   data-simulate-touch="false"
   data-slide-effect="fade"
 >
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
-
     <div
-      class="swiper-slide context-dark swiper-slide-duplicate-active"
-      data-slide-bg="assets/images/slide-1-1920x753.jpg"
-      data-swiper-slide-index="1"
+      *ngFor="let slide of slides"
+      class="swiper-slide context-dark"
+      attr.data-slide-bg="https://arconsegypt.com/api/images/slider/{{
+        slide.image
+      }}"
     >
       <div class="swiper-slide-caption section-md">
         <div class="container">
@@ -21,106 +22,19 @@
             <div class="col-sm-8 col-md-7 col-lg-6 offset-lg-1 offset-xxl-0">
               <h3 class="oh swiper-title">
                 <span
-                  class="d-inline-block not-animated"
+                  class="d-inline-block"
                   data-caption-animate="slideInUp"
                   data-caption-delay="0"
-                  >Best performance over the years</span
+                  >{{ slide.header }}</span
                 >
               </h3>
               <h5
-                class="swiper-subtitle not-animated"
+                class="swiper-subtitle"
                 data-caption-animate="fadeInLeft"
                 data-caption-delay="300"
               >
-                We are the award-winning industry leaders
+                {{ slide.caption }}
               </h5>
-              <a
-                class="button button-lg button-primary button-winona button-shadow-2 not-animated"
-                href="#"
-                data-caption-animate="fadeInUp"
-                data-caption-delay="300"
-                >View more</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="swiper-slide context-dark swiper-slide-next"
-      data-slide-bg="assets/images/slide-3-1920x753.jpg"
-      data-swiper-slide-index="0"
-    >
-      <div class="swiper-slide-caption section-md">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 col-xl-6 offset-lg-1 offset-xxl-0">
-              <h3 class="oh swiper-title">
-                <span
-                  class="d-inline-block not-animated"
-                  data-caption-animate="slideInLeft"
-                  data-caption-delay="100"
-                  >Welcome to civilgroup</span
-                >
-              </h3>
-              <h5
-                class="swiper-subtitle not-animated"
-                data-caption-animate="fadeInUp"
-                data-caption-delay="0"
-              >
-                Leading civil engineering company
-              </h5>
-              <div class="button-wrap oh">
-                <a
-                  class="button button-lg button-primary button-winona button-shadow-2 not-animated"
-                  href="#"
-                  data-caption-animate="slideInLeft"
-                  data-caption-delay="100"
-                >
-                  <div class="content-original">View more</div>
-                  <div class="content-dubbed">View more</div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="swiper-slide context-dark"
-      data-slide-bg="assets/images/slide-2-1920x753.jpg"
-      data-swiper-slide-index="2"
-    >
-      <div class="swiper-slide-caption section-md">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-9 col-md-8 col-xl-6 offset-lg-1 offset-xxl-0">
-              <h3 class="oh swiper-title">
-                <span
-                  class="d-inline-block not-animated"
-                  data-caption-animate="slideInDown"
-                  data-caption-delay="0"
-                  >trusted industry leader</span
-                >
-              </h3>
-              <h5
-                class="swiper-subtitle not-animated"
-                data-caption-animate="fadeInRight"
-                data-caption-delay="300"
-              >
-                High-quality civil engineering projects
-              </h5>
-              <div class="button-wrap oh">
-                <a
-                  class="button button-lg button-primary button-winona button-shadow-2 not-animated"
-                  href="#"
-                  data-caption-animate="slideInUp"
-                  data-caption-delay="0"
-                >
-                  <div class="content-original">View more</div>
-                  <div class="content-dubbed">View more</div>
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -157,7 +71,7 @@
     <div class="preview">
       <div
         class="preview__img"
-        style='background-image: url("assets/images/slide-3-1920x753.jpg");'
+        style="background-image: url('assets/images/slide-3-1920x753.jpg');"
       ></div>
     </div>
     <div class="swiper-button-arrow">
@@ -171,7 +85,7 @@
     <div class="preview">
       <div
         class="preview__img"
-        style='background-image: url("assets/images/slide-2-1920x753.jpg");'
+        style="background-image: url('assets/images/slide-2-1920x753.jpg');"
       ></div>
     </div>
   </div>

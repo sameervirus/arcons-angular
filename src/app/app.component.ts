@@ -1,19 +1,22 @@
 import { Component } from "@angular/core";
-import { Router,NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd } from "@angular/router";
+import { LoaderComponent } from "./loader/loader.component";
+import { HelperService } from "./services/helper.service";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
   title = "ARCONS";
   loadDone = false;
-  constructor(private router: Router) {
+  public loaderComponent = LoaderComponent;
+  constructor(private router: Router, private helper: HelperService) {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
-          this.loadDone = true
+        this.loadDone = true;
+        this.helper.loadJs();
       }
-   });
-   }
+    });
+  }
 }

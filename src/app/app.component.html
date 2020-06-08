@@ -1,6 +1,10 @@
 <div id="app">
-  <ngx-loading-bar [includeSpinner]="false"></ngx-loading-bar>
-  <app-loader></app-loader>
+  <!-- <ngx-loading-bar [includeSpinner]="false"></ngx-loading-bar> -->
+  <!-- <app-loader></app-loader> -->
+  <ng-http-loader
+    [entryComponent]="loaderComponent"
+    [opacity]="1"
+  ></ng-http-loader>
   <div class="page" [class.animated]="loadDone">
     <header class="section page-header">
       <!-- RD Navbar -->

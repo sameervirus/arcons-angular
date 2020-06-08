@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { faFacebookF, faLinkedinIn, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookF,
+  faLinkedinIn,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import { ServiceService } from "../services/service.service";
@@ -7,7 +11,6 @@ import { ServiceService } from "../services/service.service";
 @Component({
   selector: "app-footer",
   templateUrl: "./footer.component.html",
-  styleUrls: ["./footer.component.css"],
 })
 export class FooterComponent implements OnInit {
   faFacebook = faFacebookF;
